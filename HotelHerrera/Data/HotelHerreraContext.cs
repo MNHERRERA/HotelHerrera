@@ -15,5 +15,6 @@ namespace DBSqlHotelHerrera.Data
         }
 
         public DbSet<HotelHerrera.Models.Clientes> Clientes { get; set; } = default!;
+        public DbSet<HotelHerrera.Models.PlanDeRecompensas> PlanDeRecompensas { get; set; } = default!;
     }
 }
