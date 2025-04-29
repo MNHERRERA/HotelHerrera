@@ -109,7 +109,7 @@ namespace HotelHerrera.Migrations
                     b.HasOne("HotelHerrera.Models.Clientes", "InformacionCliente")
                         .WithMany()
                         .HasForeignKey("InformacionClienteId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("InformacionCliente");
