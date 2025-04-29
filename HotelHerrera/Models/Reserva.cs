@@ -4,15 +4,23 @@ namespace HotelHerrera.Models
 {
     public class Reserva
     {
-        [Key]
-        [MaxLength(15)]
-        public string IdHabitacion { set; get; }
-        public int ValorHabitacion { set; get; }
-        public DateTime Ingreso { set; get; }
-        public DateTime Salida { set; get; }
-        [MaxLength(25)]
-        public string NombreCliente { set;get; }
+         [Key]
+            public int Id { get; set; }
 
+            [Required]
+            [DataType(DataType.Date)]
+            public DateTime FechaEntrada { get; set; }
 
+            [Required]
+            [DataType(DataType.Date)]
+            public DateTime FechaSalida { get; set; }
+
+            [Required]
+            [Range(1, double.MaxValue, ErrorMessage = "El valor debe ser mayor a 0")]
+            public decimal ValorAPagar { get; set; }
+
+            [Required]
+            public Clientes InformacionCliente { get; set; }
+      
     }
 }
