@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using DBSqlHotelHerrera.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<HotelHerreraContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("HotelHerreraContext") ?? throw new InvalidOperationException("Connection string 'HotelHerreraContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
